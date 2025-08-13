@@ -3,11 +3,11 @@
 :root {
     --primary-clr-400: #8c1c13;
 
-    --secondary-clr-100: #8c1c13;
-    --secondary-clr-200: #f5f3f4;
+    --secondary-clr-100: #bf9e8f;
+    --secondary-clr-200: #976a64;
     --secondary-clr-300: #d3d3d3;
-    --secondary-clr-400: #b1a7a6;
-    --secondary-clr-700: #d9e0e6;
+    --secondary-clr-400: #44141a;
+    --secondary-clr-700: #f2dcc7;
     --secondary-clr-900: #fc7373;
 
 }
@@ -59,6 +59,23 @@ li {
     padding-inline: 1rem;
 }
 
+.btn{
+    background-color: var(--primary-clr-400);
+    color: var(--secondary-clr-100);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--secondary-clr-200);
+}
+
+.pt-section {
+    padding-top: 7rem;
+}
 
 /* Header section */
 .header {
@@ -91,6 +108,8 @@ li {
 .menu-icons {
     z-index: 200;
 }
+
+
 
 .menu-icons i{
     font-size: 1.5rem;
@@ -130,7 +149,7 @@ li {
 
 .menu a {
     font-size: 1rem;
-    color: var(--secondary-clr-100);
+    color: var(--secondary-clr-200);
     transition: color 0.3s ease-out;
     font-weight: 500;
 }

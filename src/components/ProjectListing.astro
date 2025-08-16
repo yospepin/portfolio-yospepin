@@ -1,0 +1,94 @@
+---
+import { Image } from 'astro:assets';
+
+
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+    project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+
+const { title, date, tags, image, link, abstract, introduction, shiny_output, conclusions, further_research, ethical_considerations, shiny_app_link } = project.data;
+
+---
+
+<article class="project">
+  <a class="image" href={`projects/${project.id}`} aria-label={title}>
+    <Image width={500} height={500} src={image} alt={title} />
+  </a>
+
+  <a class="title" href={`projects/${project.id}`} aria-label={title}>
+    <h3>{title}</h3>
+  </a>
+
+  <div class="details">
+    <div class="flex">
+      <p>Abstract:</p>
+      <span>{abstract.split('. ')[0] + '.'}</span>
+    </div>
+  </div>
+</article>
+
+<style>
+    .project:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+
+    .image {
+        width:100%;
+
+    }
+
+    img {
+        margin-bottom: 1.5rem;
+        border-radius: 0.5rem;
+        width: 100%;
+    }
+
+    .title {
+        position: relative;
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+        color: var(--secondary-clr-200);
+        transition: color 0.3s ease-in-out;
+    }
+
+    .title::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 4px;
+        border-radius: 0.5rem;
+        background-color: var(--primary-clr-400);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .title:hover {
+        color: var(--primary-clr-400);
+    }
+
+    .title:hover::after {
+        transform: translateY(-4px);
+    }
+
+   
+
+    .flex {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .flex:not(:last-child) {
+        margin-bottom: 0.5rem;
+    }
+
+    .details p {
+        color: var(--secondary-clr-200);
+
+    }
+</style>

@@ -19,6 +19,8 @@ const {id} = Astro.params;
 console.log('project', project);
 
 import { Image } from 'astro:assets';
+
+export const prerender = true;
 ---
 
 <Layout {title}>

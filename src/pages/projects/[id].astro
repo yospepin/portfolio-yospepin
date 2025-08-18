@@ -1,0 +1,163 @@
+---
+import { getCollection } from 'astro:content';
+
+import Layout from '../../layout/Layout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+
+const {title, date, tags, image, link, abstract, introduction, shiny_output, conclusions, further_research, ethical_considerations, shiny_app_link } = project.data;
+const {id} = Astro.params;
+
+console.log('project', project);
+
+import { Image } from 'astro:assets';
+---
+
+<Layout {title}>
+    <section class="pt-section">
+        <div class="container">
+            <div class="title">
+                <h2>{title}</h2>
+                <a href="/#my-work" aria-label="Go back to the projects section">Go back</a>
+            </div>
+
+            <Image src={image} class="main-image" width={500} height={500} alt={title} />
+            
+
+            <div class="project-story">
+                <h3>Abstract</h3>
+                <p>{abstract}</p>
+           
+
+                <h3>Introduction</h3>
+                <p>{introduction}</p>
+         
+
+                {shiny_output && Array.isArray(shiny_output) && shiny_output.length > 0 && (
+                    <>
+                        <h3>Shiny Output</h3>
+                        <ul>
+                            {shiny_output.map((point) => (
+                                <li>{point}</li>
+                            ))}
+                        </ul>
+                        <iframe src={link} width="100%" height="600px"></iframe>
+                    </>
+                )}
+
+
+                {conclusions && (
+                    <>
+                        <h3>Conclusions</h3>
+                        <p>{conclusions}</p>
+                    </>
+                )}
+               
+
+                {further_research && (
+                    <>
+                        <h3>Further Research</h3>
+                        <p>{further_research}</p>
+                    </>
+                )}
+           
+
+                {ethical_considerations && (
+                    <>
+                        <h3>Ethical Considerations</h3>
+                        <p>{ethical_considerations}</p>
+                    </>
+                )}
+              
+
+                {shiny_app_link && (
+                    <>
+                        <h3>Shiny App Link</h3>
+                        <a href={shiny_app_link} target="_blank" rel="noopener noreferrer">View Shiny App</a>
+                    </>
+                )}
+            </div>
+        </div>
+    </section>
+</Layout>
+
+
+<style>
+    .pt-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .title {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--secondary-clr-100);
+
+    }
+
+    .main-image {
+        margin-inline: auto;
+        margin-bottom: 1.5rem;
+
+    }
+
+    .project-story {
+        max-width: 800px;
+        margin-inline: auto;
+        margin-bottom: 2rem;
+    }
+
+    h3 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    a {
+        color: var(--primary-clr-400);
+        transition: color 0.3s ease-in-out;
+    }
+
+    a:hover {
+        color: var(--secondary-clr-100);
+    }
+
+    img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        .title {
+            text-align: left;
+        }
+
+        .project-story {
+            text-align: left;
+        }
+
+        .main-image {
+            margin-bottom: 2rem;
+        }
+    }
+
+</style>

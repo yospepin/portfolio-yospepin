@@ -5,6 +5,8 @@ import '../styles/global.css';
 
 import Header from '../components/header.tsx';
 
+import { ViewTransitions } from 'astro:transitions';
+
 interface Props {
     title?: string;
     description?: string;
@@ -27,6 +29,8 @@ const { title = 'Yospepin Portfolio', description = 'Welcome to my portfolio web
             crossorigin="anonymous" 
             referrerpolicy="no-referrer" />
 		<title>{title}</title>
+
+        <ViewTransitions />
 	</head>
 	<body>
         <Header client:load />

@@ -31,7 +31,7 @@ export const prerender = true;
                 <a href="/#my-work" aria-label="Go back to the projects section">Go back</a>
             </div>
 
-            <Image src={image} class="main-image" width={500} height={500} alt={title} />
+            {image && <Image src={image} class="main-image" width={500} height={500} alt={title} />}
             
 
             <div class="project-story">

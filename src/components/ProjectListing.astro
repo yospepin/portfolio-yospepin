@@ -1,22 +1,34 @@
 ---
-import { Image } from 'astro:assets';
-
-
-import type { CollectionEntry } from 'astro:content';
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
-    project: CollectionEntry<'projects'>;
+  project: CollectionEntry<"projects">;
 }
 
 const { project } = Astro.props;
+const { title, image, abstract } = project.data;
 
-const { title, date, tags, image, link, abstract, introduction, shiny_output, conclusions, further_research, ethical_considerations, shiny_app_link } = project.data;
-
+// safe abstract snippet
+const abstractSnippet =
+  abstract?.split(". ")[0]?.trim() ? `${abstract.split(". ")[0].trim()}.` : "";
 ---
 
 <article class="project">
   <a class="image" href={`projects/${project.id}`} aria-label={title}>
-    <Image width={500} height={500} src={image} alt={title} />
+    {image ? (
+      <Image
+        src={image}
+        alt={title}
+        class="thumb"
+        widths={[320, 480, 640, 960]}
+        sizes="(min-width: 768px) 360px, 100vw"
+        quality={85}
+        loading="lazy"
+      />
+    ) : (
+      <div class="thumb placeholder" aria-hidden="true"></div>
+    )}
   </a>
 
   <a class="title" href={`projects/${project.id}`} aria-label={title}>
@@ -26,69 +38,72 @@ const { title, date, tags, image, link, abstract, introduction, shiny_output, co
   <div class="details">
     <div class="flex">
       <p>Abstract:</p>
-      <span>{abstract.split('. ')[0] + '.'}</span>
+      <span>{abstractSnippet}</span>
     </div>
   </div>
 </article>
 
 <style>
-    .project:not(:last-child) {
-        margin-bottom: 3rem;
-    }
+  .project:not(:last-child) {
+    margin-bottom: 3rem;
+  }
 
-    .image {
-        width:100%;
+  .image {
+    display: block;
+    width: 100%;
+  }
 
-    }
+  /* thumbnail styling: consistent size + crop */
+  .thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
 
-    img {
-        margin-bottom: 1.5rem;
-        border-radius: 0.5rem;
-        width: 100%;
-    }
+  /* fallback if image missing */
+  .placeholder {
+    background: linear-gradient(135deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02));
+    border: 1px solid rgba(0,0,0,0.08);
+  }
 
-    .title {
-        position: relative;
-        margin-bottom: 1rem;
-        font-size: 1.25rem;
-        color: var(--secondary-clr-200);
-        transition: color 0.3s ease-in-out;
-    }
+  .title {
+    position: relative;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: var(--secondary-clr-200);
+    transition: color 0.3s ease-in-out;
+  }
 
-    .title::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100px;
-        height: 4px;
-        border-radius: 0.5rem;
-        background-color: var(--primary-clr-400);
-        transition: transform 0.3s ease-in-out;
-    }
+  .title::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 4px;
+    border-radius: 0.5rem;
+    background-color: var(--primary-clr-400);
+    transition: transform 0.3s ease-in-out;
+  }
 
-    .title:hover {
-        color: var(--primary-clr-400);
-    }
+  .title:hover {
+    color: var(--primary-clr-400);
+  }
 
-    .title:hover::after {
-        transform: translateY(-4px);
-    }
+  .title:hover::after {
+    transform: translateY(-4px);
+  }
 
-   
+  .flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 
-    .flex {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .flex:not(:last-child) {
-        margin-bottom: 0.5rem;
-    }
-
-    .details p {
-        color: var(--secondary-clr-200);
-
-    }
+  .details p {
+    color: var(--secondary-clr-200);
+  }
 </style>

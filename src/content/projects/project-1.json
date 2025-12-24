@@ -1,32 +1,35 @@
 {
   "title": "E-Scooter Trips in Minneapolis: What do they say about micromobility & transit access?",
   "date": "2025-12-16",
-  "tags": ["data visualization", "shiny app", "Minnesota", "transit", "micromobility", "e-scooters"],
+  "tags": ["data visualization", "shiny app", "Minneapolis", "urban mobility","public transit", "micromobility", "equality analysis"],
   "image": "./images/project2_main.png",
   "link": "https://yospepin.shinyapps.io/Dashboard/",
-  "abstract": "This project  uses scooter trip records and transit stop data in Minneapolis to ask whether scooters are mostly connecting people to transit (first/last mile) or substituting for transit (sub_one / sub_multi), and where they appear to fill access gaps beyond walking distance of bus stops.",
-  "introduction": "How do shifts in racial and ethnic population demographics correlate with income changes across Minnesota counties over the past decade? We aimed to explore how economic gaps among racial and ethnic groups might affect income levels and access to economic opportunities. By doing so, we hope to highlight economic challenges faced by diverse communities and provide insights for policies that promote inclusion and equity.",
+  "abstract": "This project analyzes shared e-scooter trip records alongside transit stop and bus route data in Minneapolis to understand how scooters interact with the public transit system. It asks whether scooters primarily function as first- and last-mile connectors, substitute for transit trips, or fill genuine access gaps beyond walking distance of bus stops, with a particular focus on equity and neighborhood-level impacts.",
+  "introduction": "Cities increasingly rely on micromobility to complement public transit, yet its actual role remains contested. Using anonymized e-scooter trip segments and transit network geometry, this project examines how scooters are used across time, space, and neighborhoods in Minneapolis. The analysis emphasizes practical planning questions: where scooters extend transit access, where they compete with buses, and where targeted investments could improve mobility outcomes—especially in lower-income and low-car-ownership areas.",
   "shiny_output": [
-    "Introduction Tab - An animated GIF showing changes in per capita income per county over time.",
-    "County-level Analysis Tab - Interactive county map with income and racial changes from 2012–2022. Slider for controlling visualization pace.",
-    "Tract-level Analysis Tab - Similar to county-level, but at census tract scale.",
-    "Income Trend Plot - Grey lines for all counties, highlighted blue line for the selected county.",
-    "Racial Makeup Trend Plot - Trends in racial composition for the selected county."
+    "Story Overview – Executive summary and key assumptions explaining behavior classification and data limitations.",
+    "Substitution Explorer – Bar charts and hourly line plots showing how often scooters replace potential transit trips versus act as first- or last-mile connectors.",
+    "Gap Explorer – Maps identifying neighborhoods where scooters operate beyond walking distance of transit stops.",
+    "Route Leakiness Analysis – Ranking of bus routes where scooters most frequently substitute for transit trips relative to route boardings.",
+    "Equity Priority Tables – Census-tract-level rankings highlighting areas where scooter access gaps intersect with low income, low car ownership, and weak transit service.",
+    "Travel Time Comparison – Distribution plots and summary tables comparing scooter travel times to Google-estimated bike and transit alternatives."
   ],
   "conclusions": [
-    "2019–2020 jump in income likely related to post-COVID economic rebound.",
-    "Counties with higher per capita income showed less fluctuation in racial composition.",
-    "Overall per capita income rose since 2012, but declined in 2021–2022, possibly due to inflation and tighter monetary policy.",
-    "Racial makeup generally increased across all groups, with exceptions like Renville County’s slight drop in Asian population."
+    "Scooters in Minneapolis serve a dual role: they both extend transit access during commute hours and substitute for transit on specific high-demand corridors.",
+    "First-mile use peaks in the early morning, while last-mile use dominates weekday afternoons, reflecting commute-oriented travel patterns.",
+    "Leakiness analysis highlights bus routes where relatively small service or integration improvements could retain riders.",
+    "Scooters disproportionately fill access gaps in lower-income neighborhoods with higher zero-car ownership and weaker transit coverage.",
+    "Travel-time comparisons show that while biking is often fastest, scooters frequently outperform transit for short-to-medium trips due to waiting and transfer times."
   ],
   "further_research": [
-    "Income changes within racial groups.",
-    "Role of job availability and sector-specific income growth in shaping income disparities."
+    "Incorporating real-time transit reliability and headway variability into substitution analysis.",
+    "Evaluating the impact of scooter pricing and availability on substitution versus access behavior.",
+    "Extending travel-time comparisons with rider surveys to capture preferences beyond speed."
   ],
   "ethical_considerations": [
-    "Census data is anonymous to protect privacy.",
-    "Our reporting avoids targeting any group and aims for bias-free observations.",
-    "We acknowledge potential census errors and keep interpretations cautious."
+    "All scooter trip data is anonymized and analyzed at the street-segment and census-tract level.",
+    "Results are interpreted cautiously due to the use of inferred behavior based on network proximity rather than observed rider intent.",
+    "Equity analyses prioritize identifying underserved areas without stigmatizing specific communities."
   ],
   "shiny_app_link": "https://yospepin.shinyapps.io/Dashboard/"
 }

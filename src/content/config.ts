@@ -11,7 +11,7 @@ const projectCollection = defineCollection({
         link: z.string().optional(),
         abstract: z.string().optional(),
         introduction: z.string().optional(),
-        shiny_output: z.array(z.string()).optional(),
+        output: z.array(z.string()).optional(),
         conclusions: z.array(z.string()).optional(),
         further_research: z.array(z.string()).optional(),
         ethical_considerations: z.array(z.string()).optional(),

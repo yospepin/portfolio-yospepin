@@ -6,7 +6,7 @@
   "link": "https://irisfokamsi.shinyapps.io/welovemaps_shiny/",
   "abstract": "This project focuses on exploring the trends in personal income of Minnesotans from 2012 to 2022, along with shifts in the racial makeup of the population. The files used in this project are in the `welovemaps_shiny` folder within the `code` directory of this repository. The county-level datasets came from the Bureau of Economic Analysis, U.S. Department of Commerce website (see Milestone1 for more). Code for cleaning these datasets is in the `data_cleaning` folder. The final product is a Shiny app displaying racial and income makeups of Minnesota on both county and tract levels, located in the `welovemaps_shiny` folder, or accessible via the link above.",
   "introduction": "How do shifts in racial and ethnic population demographics correlate with income changes across Minnesota counties over the past decade? We aimed to explore how economic gaps among racial and ethnic groups might affect income levels and access to economic opportunities. By doing so, we hope to highlight economic challenges faced by diverse communities and provide insights for policies that promote inclusion and equity.",
-  "shiny_output": [
+  "output": [
     "Introduction Tab - An animated GIF showing changes in per capita income per county over time.",
     "County-level Analysis Tab - Interactive county map with income and racial changes from 2012–2022. Slider for controlling visualization pace.",
     "Tract-level Analysis Tab - Similar to county-level, but at census tract scale.",

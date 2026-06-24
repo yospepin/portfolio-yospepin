@@ -6,7 +6,7 @@
   "link": "https://yospepin.shinyapps.io/Dashboard/",
   "abstract": "This project analyzes shared e-scooter trip records alongside transit stop and bus route data in Minneapolis to understand how scooters interact with the public transit system. It asks whether scooters primarily function as first- and last-mile connectors, substitute for transit trips, or fill genuine access gaps beyond walking distance of bus stops, with a particular focus on equity and neighborhood-level impacts.",
   "introduction": "Cities increasingly rely on micromobility to complement public transit, yet its actual role remains contested. Using anonymized e-scooter trip segments and transit network geometry, this project examines how scooters are used across time, space, and neighborhoods in Minneapolis. The analysis emphasizes practical planning questions: where scooters extend transit access, where they compete with buses, and where targeted investments could improve mobility outcomes—especially in lower-income and low-car-ownership areas.",
-  "shiny_output": [
+  "output": [
     "Story Overview – Executive summary and key assumptions explaining behavior classification and data limitations.",
     "Substitution Explorer – Bar charts and hourly line plots showing how often scooters replace potential transit trips versus act as first- or last-mile connectors.",
     "Gap Explorer – Maps identifying neighborhoods where scooters operate beyond walking distance of transit stops.",

@@ -5,5 +5,28 @@
   "image":"./images/project3_main.png",
   "link": "https://met-viz.netlify.app/",
   "abstract": "Interactive slide deck and scrollytelling project exploring The Met's Costume Institute collection with D3 and Scrollama. It moves from a title sequence into a bubble map of objects by inferred country, then into a materials-over-time story, and finally into scrollytelling views about named designers and the structure of fashion houses.",
-  "introduction": "Authors: Yosephine Manihuruk and Natalia Morales. Course: Data Visualization - Macalester College. This single-page HTML experience uses keyboard navigation, scroll-driven storytelling, and custom charts to examine how Costume Institute objects are distributed geographically, how materials change over time, who gets named in the catalog, and how objects cluster by fashion house, designer gender, and designer nationality."
+  "introduction": "Authors: Yosephine Manihuruk and Natalia Morales. Course: Data Visualization - Macalester College. This single-page HTML experience uses keyboard navigation, scroll-driven storytelling, and custom charts to examine how Costume Institute objects are distributed geographically, how materials change over time, who gets named in the catalog, and how objects cluster by fashion house, designer gender, and designer nationality.",
+    "output": [
+        "Title Sequence – Animated title sequence with a zooming bubble map of objects by inferred country.",
+        "Materials Over Time – Interactive line chart showing how materials change over time, with a focus on the 20th century.",
+        "Named Designers – Scrollytelling view showing how many objects are named after designers, and how this varies by gender and nationality.",
+        "Fashion House Clusters – Scrollytelling view showing how objects cluster by fashion house, designer gender, and designer nationality."
+    ],
+    "conclusions": [
+        "The Met's Costume Institute collection is geographically diverse, with objects from many countries.",
+        "Materials used in fashion have changed over time, with a notable increase in synthetic materials in the 20th century.",
+        "Named designers are more likely to be male and from certain countries, reflecting historical biases in the fashion industry.",
+        "Objects cluster by fashion house, designer gender, and designer nationality, indicating that these factors influence the design and production of fashion items."
+    ],
+    "further_research": [
+        "Investigate the impact of historical events on fashion trends and materials.",
+        "Explore the role of cultural exchange in the development of fashion across different countries.",
+        "Analyze the influence of fashion education and training on designer recognition and object naming."
+    ],
+    "ethical_considerations": [
+        "Ensure that the representation of designers and fashion houses is accurate and respectful.",
+        "Consider the implications of historical biases in the fashion industry when interpreting data.",
+        "Acknowledge the limitations of the dataset and the potential for missing or incomplete information."
+    ],
+    "shiny_app_link": "https://met-viz.netlify.app/"
 }

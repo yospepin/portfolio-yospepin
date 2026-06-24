@@ -1,13 +1,13 @@
 /* Global Styles */
 
 :root {
-    --primary-clr-400: #8f241d;
+    --primary-clr-400: #8c1c13;
 
     --secondary-clr-100: #2f1f1d;
-    --secondary-clr-200: #6f504a;
-    --secondary-clr-300: #d8d2cf;
-    --secondary-clr-400: #4a1717;
-    --secondary-clr-700: #f5e7dc;
+    --secondary-clr-200: #774f4a;
+    --secondary-clr-300: #d3d3d3;
+    --secondary-clr-400: #44141a;
+    --secondary-clr-700: #f2dcc7;
     --secondary-clr-900: #d76a5f;
 
 }
@@ -106,8 +106,8 @@ h2 {
 }
 
 .header.scrolling {
-    background-color: rgba(245, 231, 220, 0.94);
-    box-shadow: 0 2px 18px rgba(47, 31, 29, 0.12);
+    background-color: var(--secondary-clr-700);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* icons */

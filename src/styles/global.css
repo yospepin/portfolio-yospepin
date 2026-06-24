@@ -1,14 +1,14 @@
 /* Global Styles */
 
 :root {
-    --primary-clr-400: #8c1c13;
+    --primary-clr-400: #8f241d;
 
-    --secondary-clr-100: #d0af9f;
-    --secondary-clr-200: #774f4a;
-    --secondary-clr-300: #d3d3d3;
-    --secondary-clr-400: #44141a;
-    --secondary-clr-700: #f2dcc7;
-    --secondary-clr-900: #fc7373;
+    --secondary-clr-100: #2f1f1d;
+    --secondary-clr-200: #6f504a;
+    --secondary-clr-300: #d8d2cf;
+    --secondary-clr-400: #4a1717;
+    --secondary-clr-700: #f5e7dc;
+    --secondary-clr-900: #d76a5f;
 
 }
 
@@ -33,7 +33,7 @@ img{
 
 button {
     background-color: transparent;
-    color: var(--secondary-clr-100);
+    color: var(--secondary-clr-400);
     border: none;
     outline: none;
     cursor: pointer;
@@ -61,7 +61,7 @@ li {
 
 .btn{
     background-color: var(--primary-clr-400);
-    color: var(--secondary-clr-100);
+    color: var(--secondary-clr-700);
     padding: 0.75rem 1.5rem;
     border-radius: 5rem;
     font-weight: 600;
@@ -106,8 +106,8 @@ h2 {
 }
 
 .header.scrolling {
-    background-color: var(--secondary-clr-700);
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    background-color: rgba(245, 231, 220, 0.94);
+    box-shadow: 0 2px 18px rgba(47, 31, 29, 0.12);
 }
 
 /* icons */
@@ -142,7 +142,7 @@ h2 {
 
 .menu{
     background-color: var(--secondary-clr-700);
-    border-left: 2px solid var(--secondary-clr-100);
+    border-left: 2px solid var(--secondary-clr-300);
     height: 100%;
     padding-top: 8rem;
     padding-left: 1.5rem;

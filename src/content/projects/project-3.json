@@ -1,0 +1,9 @@
+{
+  "title": "MET: Visualizing High Fashion",
+  "date": "2026-06-24",
+  "tags": ["data visualization", "D3", "scrollytelling", "The Met", "fashion"],
+  "image":"./images/project3_main.png",
+  "link": "https://met-viz.netlify.app/",
+  "abstract": "Interactive slide deck and scrollytelling project exploring The Met's Costume Institute collection with D3 and Scrollama. It moves from a title sequence into a bubble map of objects by inferred country, then into a materials-over-time story, and finally into scrollytelling views about named designers and the structure of fashion houses.",
+  "introduction": "Authors: Yosephine Manihuruk and Natalia Morales. Course: Data Visualization - Macalester College. This single-page HTML experience uses keyboard navigation, scroll-driven storytelling, and custom charts to examine how Costume Institute objects are distributed geographically, how materials change over time, who gets named in the catalog, and how objects cluster by fashion house, designer gender, and designer nationality."
+}

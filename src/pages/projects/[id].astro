@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 
-const {title, date, tags, image, link, abstract, introduction, shiny_output, conclusions, further_research, ethical_considerations, shiny_app_link } = project.data;
+const {title, date, tags, image, link, abstract, introduction, output, conclusions, further_research, ethical_considerations, shiny_app_link } = project.data;
 const {id} = Astro.params;
 
 console.log('project', project);
@@ -50,11 +50,11 @@ export const prerender = true;
                 <p>{introduction}</p>
          
 
-                {shiny_output && Array.isArray(shiny_output) && shiny_output.length > 0 && (
+                {output && Array.isArray(output) && output.length > 0 && (
                     <>
-                        <h3>Shiny Output</h3>
+                        <h3>Output</h3>
                         <ul>
-                            {shiny_output.map((point) => (
+                            {output.map((point) => (
                                 <li>{point}</li>
                             ))}
                         </ul>

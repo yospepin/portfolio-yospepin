@@ -1,22 +1,28 @@
 ---
 import Layout from '../layout/Layout.astro';
-import Hero from '../sections/Hero.astro';
-import About from '../sections/About.astro';
-import Projects from '../sections/Projects.astro';
-import Contact from '../sections/Contact.astro';
-
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import portrait from '../assets/about-image.jpeg';
+import contours from '../assets/background.png';
+import papers from '../data/papers.json';
+const projects = await getCollection('projects');
+const features = [
+ {id:'project-1',title:'Where scooters meet public transit',category:'Urban mobility · Spatial analysis',summary:'Exploring how shared scooters connect with Minneapolis transit—and where gaps in access remain.',tools:['R','Spatial analysis','Shiny']},
+ {id:'project-2',title:'Mapping a changing Minnesota',category:'Public data · Interactive reporting',summary:'An interactive view of income trends and demographic change across Minnesota counties and census tracts.',tools:['R','Public datasets','Shiny']},
+ {id:'project-4',title:'Who gets to define a language?',category:'Language · Computational research',summary:'Comparing institutional recognition of Spanish words with how people use them on social media.',tools:['Python','NLP','Text analysis']},
+ {id:'project-3',title:'Fashion, through the collection',category:'Culture · Visual storytelling',summary:'Exploring geography, materials, and representation in The Met’s Costume Institute collection.',tools:['D3','Scrollama','Data visualization']}
+];
 ---
-
 <Layout>
-	<!-- Hero Section -->
-	<Hero />
-
-	<!-- About Section -->
-	<About />
-
-	<!-- Projects Section -->
-	<Projects />
-
-	<!-- Contacts Section -->
-	<Contact />
+<section id="home" class="personal-hero container">
+<div class="intro-copy"><p class="hello">Hi! I’m</p><h1>Yosephine<br /><span>Manihuruk.</span></h1><p class="intro-subject">Data science, international studies,<br />and the questions in between.</p><p class="intro-text">I’m an interdisciplinary thinker with a humanities-driven worldview and a data scientist’s curiosity. I like working through questions about people and institutions—and figuring out what data can help us understand.</p><div class="intro-actions"><a class="button" href="#work">Take a look at my work ↓</a><a class="text-link" href="#research">Or read something I’ve written</a></div></div>
+<figure class="intro-photo"><div class="contour-mat" style={`background-image: url(${contours.src})`}></div><Image src={portrait} alt="Yosephine seated beside a bookshelf and plants" widths={[500,800,1100]} sizes="(max-width: 700px) 90vw, 45vw" loading="eager" /><figcaption><span>Yosephine, or Yospepin.</span><span>Based in Minneapolis</span></figcaption><span class="photo-loop" aria-hidden="true"></span></figure>
+<div class="personal-index"><span>Some of the places my questions take me:</span><a href="#work">Cities & movement</a><a href="/projects/project-4/">Language & belonging</a><a href="#research">Politics & interpretation</a></div>
+</section>
+<section id="work" class="section container"><div class="section-heading"><div><p class="eyebrow">Selected projects</p><h2>A few things<br />I’ve been working on.</h2></div><p>Maps, language, and cultural collections.<br />Different subjects; a shared attention to context.</p></div>
+<div class="project-grid personal-projects">{features.map((feature,i) => {const project=projects.find(p=>p.id===feature.id);return project && <article class="project-card"><a class="project-image" href={`/projects/${project.id}/`} aria-label={`Explore ${feature.title}`}><span class="project-number">0{i+1}</span>{project.data.image && <Image src={project.data.image} alt={`${feature.title} — visualization preview`} widths={[480,800,1200]} sizes="(max-width: 700px) 100vw, 50vw" loading="lazy" /> }<span class="image-arrow" aria-hidden="true">↗</span></a><p class="eyebrow project-category">{feature.category}</p><h3><a href={`/projects/${project.id}/`}>{feature.title}</a></h3><p class="project-summary">{feature.summary}</p><ul class="tags" aria-label="Methods and tools">{feature.tools.map(t=><li>{t}</li>)}</ul></article>})}</div></section>
+<section id="research" class="research-section"><div class="container"><div class="section-heading"><div><p class="eyebrow">Research & writing</p><h2>Room for a<br />longer argument.</h2></div><p>Some questions need close reading,<br />a little historical context, and more than a chart.</p></div>
+{papers.map(p=><article class="paper-row"><div class="paper-label"><span class="eyebrow">{p.year} / {p.type}</span><span class="paper-mark" aria-hidden="true">On religion,<br />violence,<br />& interpretation.</span><span>{p.pages} pages · PDF</span></div><div class="paper-copy"><ul class="tags">{p.topics.map(t=><li>{t}</li>)}</ul><h3><a href={`/writing/${p.slug}/`}>{p.title}</a></h3><p>{p.summary}</p><p class="paper-course">{p.course} · {p.institution}</p><div class="actions"><a class="text-link" href={`/writing/${p.slug}/`}>About the paper ↗</a><a class="text-link" href={p.pdf} target="_blank" rel="noopener noreferrer">Read PDF ↗</a></div></div></article>)}
+</div></section>
+<section id="about" class="section container personal-about"><div class="about-margin"><p class="eyebrow">A little more about me</p><h2>People first.<br />Always curious.</h2><p class="margin-note">Pekanbaru → Singapore →<br />St. Paul / Minneapolis</p></div><div class="about-copy"><p>I’m from Pekanbaru, Indonesia, and graduated from Macalester College in May 2026 with a double major in Data Science and International Studies and a minor in Political Science.</p><p>I’ve worked across human-rights monitoring, international affairs, and academic research. Those experiences keep me interested in the people and institutions behind the data: whose experiences get recorded, how categories are made, and what our methods might miss.</p><p>That’s also why my projects don’t all look alike. Sometimes the right way into a question is a map or a database. Sometimes it’s an archive, a close reading, or a conversation.</p><p>Outside of work, I enjoy bouldering, reading, writing, café hopping, and live music.</p><div class="expertise"><div><h3>Tools I work with</h3><p>R · Python · SQL · Shiny · D3 · Spatial analysis</p></div><div><h3>Ways I work</h3><p>Research · Literature synthesis · Data cleaning · Visualization · Writing</p></div></div><a class="text-link" href="mailto:yosephinemaria.m@gmail.com">Say hello ↗</a></div></section>
 </Layout>

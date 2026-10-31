@@ -1,10 +1,16 @@
 {
   "title": "Income and Racial Shifts in Minnesota",
   "date": "2024-10-06",
-  "tags": ["data visualization", "shiny app", "Minnesota", "income", "race"],
+  "tags": [
+    "data visualization",
+    "shiny app",
+    "Minnesota",
+    "income",
+    "race"
+  ],
   "image": "./images/project1_main.png",
   "link": "https://irisfokamsi.shinyapps.io/welovemaps_shiny/",
-  "abstract": "This project focuses on exploring the trends in personal income of Minnesotans from 2012 to 2022, along with shifts in the racial makeup of the population. The files used in this project are in the `welovemaps_shiny` folder within the `code` directory of this repository. The county-level datasets came from the Bureau of Economic Analysis, U.S. Department of Commerce website (see Milestone1 for more). Code for cleaning these datasets is in the `data_cleaning` folder. The final product is a Shiny app displaying racial and income makeups of Minnesota on both county and tract levels, located in the `welovemaps_shiny` folder, or accessible via the link above.",
+  "abstract": "An interactive Shiny project exploring personal income trends from 2012 to 2022 alongside changes in Minnesota’s racial and ethnic population composition. County- and census-tract-level views bring public datasets into a shared geographic interface.",
   "introduction": "How do shifts in racial and ethnic population demographics correlate with income changes across Minnesota counties over the past decade? We aimed to explore how economic gaps among racial and ethnic groups might affect income levels and access to economic opportunities. By doing so, we hope to highlight economic challenges faced by diverse communities and provide insights for policies that promote inclusion and equity.",
   "output": [
     "Introduction Tab - An animated GIF showing changes in per capita income per county over time.",
@@ -13,20 +19,15 @@
     "Income Trend Plot - Grey lines for all counties, highlighted blue line for the selected county.",
     "Racial Makeup Trend Plot - Trends in racial composition for the selected county."
   ],
-  "conclusions": [
-    "2019–2020 jump in income likely related to post-COVID economic rebound.",
-    "Counties with higher per capita income showed less fluctuation in racial composition.",
-    "Overall per capita income rose since 2012, but declined in 2021–2022, possibly due to inflation and tighter monetary policy.",
-    "Racial makeup generally increased across all groups, with exceptions like Renville County’s slight drop in Asian population."
-  ],
+  "conclusions": [],
   "further_research": [
     "Income changes within racial groups.",
     "Role of job availability and sector-specific income growth in shaping income disparities."
   ],
   "ethical_considerations": [
-    "Census data is anonymous to protect privacy.",
-    "Our reporting avoids targeting any group and aims for bias-free observations.",
-    "We acknowledge potential census errors and keep interpretations cautious."
+    "County- and tract-level patterns describe places, not individual outcomes. They do not establish income differences within racial groups.",
+    "Interpreting income changes requires checking the measure, units, and whether values are inflation-adjusted.",
+    "The dashboard is descriptive; it does not establish that demographic change caused income change, or attribute year-to-year movements to a particular economic policy."
   ],
   "shiny_app_link": "https://irisfokamsi.shinyapps.io/welovemaps_shiny/"
 }

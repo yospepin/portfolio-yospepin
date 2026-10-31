@@ -1,0 +1,10 @@
+---
+import Layout from '../../layout/Layout.astro';
+import papers from '../../data/papers.json';
+export const prerender = true;
+export function getStaticPaths(){return papers.map(paper=>({params:{slug:paper.slug},props:{paper}}));}
+const {paper}=Astro.props;
+---
+<Layout title={`${paper.title} | Yosephine Manihuruk`} description={paper.summary}>
+<article class="reading-page container"><a class="back-link" href="/#research">← Research & writing</a><header class="reading-header"><p class="eyebrow">{paper.type} · {paper.year}</p><h1>{paper.title}</h1><p class="reading-deck">{paper.deck}</p><ul class="tags">{paper.topics.map(t=><li>{t}</li>)}</ul></header><div class="reading-grid"><aside class="reading-meta"><h2>Paper details</h2><dl><dt>Author</dt><dd>Yosephine Manihuruk</dd><dt>Course</dt><dd>{paper.course}</dd><dt>Institution</dt><dd>{paper.institution}</dd><dt>Format</dt><dd>{paper.pages} pages · PDF</dd></dl></aside><div class="reading-body"><h2>Overview</h2><p>{paper.summary}</p><h2>Approach</h2><p>{paper.approach}</p><h2>Central question</h2><p>{paper.question}</p><div class="download-box"><h2>Read the complete paper</h2><p>The original course paper, including acknowledgments and bibliography.</p><div class="actions"><a class="button" href={paper.pdf} target="_blank" rel="noopener noreferrer">Open PDF ↗</a><a class="text-link" href={paper.pdf} download>Download PDF ↓</a></div></div></div></div></article>
+</Layout>

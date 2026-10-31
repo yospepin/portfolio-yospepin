@@ -15,6 +15,7 @@ export default defineConfig({
       enabled: false,
   },
 
+  vite: { server: { allowedHosts: ["terminal.local"] } },
   integrations: [react()],
   output: 'server',
   adapter: netlify(),

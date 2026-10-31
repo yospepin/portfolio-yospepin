@@ -1,40 +1,26 @@
 ---
-import '@fontsource/montserrat';
-
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/500.css';
+import '@fontsource/montserrat/600.css';
 import '../styles/global.css';
-
-import Header from '../components/header.tsx';
-
-import { ViewTransitions } from 'astro:transitions';
-
-interface Props {
-    title?: string;
-    description?: string;
-}
-
-const { title = 'Yospepin Portfolio', description = 'Welcome to my portfolio website.' } = Astro.props;
+interface Props { title?: string; description?: string; }
+const { title = 'Yosephine Manihuruk | Data, research & public life', description = 'Research, data analysis, and visualization by Yosephine Manihuruk, a Macalester graduate in Data Science and International Studies.' } = Astro.props;
 ---
-
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-        <meta name="description" content={description} />
-        <link 
-            rel="stylesheet" 
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" 
-            integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" 
-            crossorigin="anonymous" 
-            referrerpolicy="no-referrer" />
-		<title>{title}</title>
-
-        <ViewTransitions />
-	</head>
-	<body>
-        <Header client:load />
-		<slot />
-	</body>
-</html>
-
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="description" content={description} /><meta name="theme-color" content="#f7f4ed" />
+<meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
+<title>{title}</title>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+<a class="wordmark" href="/" aria-label="Yosephine Manihuruk home"><img src="/logo.svg" width="48" height="48" alt="" /><span>Yosephine Manihuruk</span></a>
+<nav aria-label="Main navigation"><a href="/#work">Projects</a><a href="/#research">Research & writing</a><a href="/#about">About</a><a href="/#contact">Contact <span aria-hidden="true">↗</span></a></nav>
+</div></header>
+<main id="main"><slot /></main>
+<footer class="site-footer" id="contact"><div class="container"><div class="footer-top"><div><p class="eyebrow">Let’s connect</p><h2>Have something<br />in mind?</h2></div><div class="footer-contact"><p>I’m looking for analyst and research opportunities.<br />I’d love to hear what you’re working on.</p><a class="text-link" href="mailto:yosephinemaria.m@gmail.com">yosephinemaria.m@gmail.com ↗</a></div></div><div class="footer-bottom"><p>© {new Date().getFullYear()} Yosephine Manihuruk</p><div><a href="https://www.linkedin.com/in/yosephinemanihuruk/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/yospepin" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="/#home">Back to top ↑</a></div></div></div></footer>
+</body></html>

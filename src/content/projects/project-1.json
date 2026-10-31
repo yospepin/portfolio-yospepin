@@ -1,26 +1,28 @@
 {
   "title": "E-Scooter Trips in Minneapolis: What do they say about micromobility & transit access?",
   "date": "2025-12-16",
-  "tags": ["data visualization", "shiny app", "Minneapolis", "urban mobility","public transit", "micromobility", "equality analysis"],
+  "tags": [
+    "data visualization",
+    "shiny app",
+    "Minneapolis",
+    "urban mobility",
+    "public transit",
+    "micromobility",
+    "equality analysis"
+  ],
   "image": "./images/project2_main.png",
   "link": "https://yospepin.shinyapps.io/Dashboard/",
   "abstract": "This project analyzes shared e-scooter trip records alongside transit stop and bus route data in Minneapolis to understand how scooters interact with the public transit system. It asks whether scooters primarily function as first- and last-mile connectors, substitute for transit trips, or fill genuine access gaps beyond walking distance of bus stops, with a particular focus on equity and neighborhood-level impacts.",
   "introduction": "Cities increasingly rely on micromobility to complement public transit, yet its actual role remains contested. Using anonymized e-scooter trip segments and transit network geometry, this project examines how scooters are used across time, space, and neighborhoods in Minneapolis. The analysis emphasizes practical planning questions: where scooters extend transit access, where they compete with buses, and where targeted investments could improve mobility outcomes—especially in lower-income and low-car-ownership areas.",
   "output": [
     "Story Overview – Executive summary and key assumptions explaining behavior classification and data limitations.",
-    "Substitution Explorer – Bar charts and hourly line plots showing how often scooters replace potential transit trips versus act as first- or last-mile connectors.",
+    "Substitution Explorer – Bar charts and hourly line plots showing how often trips are classified as potential transit substitutes versus act as first- or last-mile connectors.",
     "Gap Explorer – Maps identifying neighborhoods where scooters operate beyond walking distance of transit stops.",
-    "Route Leakiness Analysis – Ranking of bus routes where scooters most frequently substitute for transit trips relative to route boardings.",
+    "Route Leakiness Analysis – Ranking of bus routes where trips are most frequently classified as potential substitutes relative to route boardings.",
     "Equity Priority Tables – Census-tract-level rankings highlighting areas where scooter access gaps intersect with low income, low car ownership, and weak transit service.",
     "Travel Time Comparison – Distribution plots and summary tables comparing scooter travel times to Google-estimated bike and transit alternatives."
   ],
-  "conclusions": [
-    "Scooters in Minneapolis serve a dual role: they both extend transit access during commute hours and substitute for transit on specific high-demand corridors.",
-    "First-mile use peaks in the early morning, while last-mile use dominates weekday afternoons, reflecting commute-oriented travel patterns.",
-    "Leakiness analysis highlights bus routes where relatively small service or integration improvements could retain riders.",
-    "Scooters disproportionately fill access gaps in lower-income neighborhoods with higher zero-car ownership and weaker transit coverage.",
-    "Travel-time comparisons show that while biking is often fastest, scooters frequently outperform transit for short-to-medium trips due to waiting and transfer times."
-  ],
+  "conclusions": [],
   "further_research": [
     "Incorporating real-time transit reliability and headway variability into substitution analysis.",
     "Evaluating the impact of scooter pricing and availability on substitution versus access behavior.",

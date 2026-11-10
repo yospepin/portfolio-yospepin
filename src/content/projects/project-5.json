@@ -9,6 +9,7 @@
     "Text Analysis",
     "Healthcare"
   ],
+  "image":"./images/project5_main.jpg",
   "link": "https://github.com/yospepin/medical-device-reporting-review",
   "abstract": "An investigation into a sudden increase in FDA reports for PTCA balloon catheters. Using Python, Excel, and original report narratives, I traced the increase to a concentration of older recorded events and identified how registry reporting and incomplete event dates complicated their interpretation.",
   "introduction": "In May 2025, FDA reports for the LOX device category increased from 128 to 343. I initially examined the change through monthly counts and event-to-receipt timing, then reviewed the underlying narratives to investigate the unusual pattern.",

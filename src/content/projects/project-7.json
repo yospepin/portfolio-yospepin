@@ -1,0 +1,27 @@
+{
+  "title": "Twin Cities Performing Arts Database",
+  "date": "2026-04-22",
+  "tags": ["MariaDB", "SQL", "Relational database design", "ER modeling"],
+  "image": "./images/project7_main.jpg",
+  "abstract": "A team-designed relational database prototype for exploring Twin Cities theater performances, productions, artists, venues, and ticket records. The work includes a conceptual ER diagram, a relational schema, sample data, and SQL queries for navigating relationships across the system.",
+  "introduction": "How could one database bring together the schedules, people, and places involved in local performing arts? Working with Tu Tran and Natalia Morales Flores for an Introduction to Database Management Systems course, I helped model shows separately from productions and individual performances, then translate the relationships into MariaDB tables and example queries. This was an academic prototype built with demonstration records, not a live listing or ticketing service.",
+  "output": [
+    "Conceptual ER diagram and crow's-foot schema for shows, productions, performances, theater companies, venues, people, roles, seating, and tickets.",
+    "MariaDB database dump with demonstration records and primary/foreign-key relationships.",
+    "Five SQL query exercises for schedules, artist histories, venue histories, performance casts, and genres; accompanying query-operation diagrams."
+  ],
+  "conclusions": [
+    "Separating shows, productions, and performances made it possible to answer distinct questions about repertoire, staging, and scheduling.",
+    "Junction tables and composite keys captured relationships between production roles, people, venues, and performances.",
+    "The project illustrated the gap between an ideal conceptual design and the constraints of an initial SQL implementation."
+  ],
+  "further_research": [
+    "Implement the many-to-many company and genre relationships proposed in the conceptual model.",
+    "Improve the consistency and validation of demonstration records before extending the database to a public-facing service."
+  ],
+  "ethical_considerations": [
+    "A shared arts directory would need consent and appropriate access controls before publishing artists' personal contact information.",
+    "Incomplete coverage could overrepresent major institutions and overlook small community organizations.",
+    "Performance descriptions and promotional materials require attention to reuse permissions."
+  ]
+}

@@ -8,7 +8,13 @@ import papers from '../data/papers.json';
 const projects = await getCollection('projects');
 const features = [
  {id:'project-1',title:'Where scooters meet public transit',category:'Urban mobility · Spatial analysis',summary:'Exploring how shared scooters connect with Minneapolis transit—and where gaps in access remain.',tools:['R','Spatial analysis','Shiny']},
- {id:'project-2',title:'Mapping a changing Minnesota',category:'Public data · Interactive reporting',summary:'An interactive view of income trends and demographic change across Minnesota counties and census tracts.',tools:['R','Public datasets','Shiny']},
+ {
+  id: 'project-5',
+  title: 'Behind the Spike',
+  category: 'Medical devices · Reporting analysis',
+  summary: 'Investigating why FDA device reports surged in May 2025, and what the underlying narratives reveal about reporting practices and date quality.',
+  tools: ['Python', 'Excel', 'Text analysis']
+},
  {id:'project-4',title:'Who gets to define a language?',category:'Language · Computational research',summary:'Comparing institutional recognition of Spanish words with how people use them on social media.',tools:['Python','NLP','Text analysis']},
  {id:'project-3',title:'Fashion, through the collection',category:'Culture · Visual storytelling',summary:'Exploring geography, materials, and representation in The Met’s Costume Institute collection.',tools:['D3','Scrollama','Data visualization']}
 ];

@@ -1,0 +1,31 @@
+
+{
+  "title": "Behind the Spike: Medical Device Reporting Trend Review",
+  "date": "2026-11-10",
+  "tags": [
+    "Python",
+    "Excel",
+    "Data Quality",
+    "Text Analysis",
+    "Healthcare"
+  ],
+  "link": "https://github.com/yospepin/medical-device-reporting-review",
+  "abstract": "An investigation into a sudden increase in FDA reports for PTCA balloon catheters. Using Python, Excel, and original report narratives, I traced the increase to a concentration of older recorded events and identified how registry reporting and incomplete event dates complicated their interpretation.",
+  "introduction": "In May 2025, FDA reports for the LOX device category increased from 128 to 343. I initially examined the change through monthly counts and event-to-receipt timing, then reviewed the underlying narratives to investigate the unusual pattern.",
+  "output": [
+    "Excel workbook with monthly trends, timing breakdowns, and data-quality checks.",
+    "Python workflow for extracting, cleaning, and analyzing 1,922 reports.",
+    "Narrative screening of all 343 May reports, with targeted manual validation."
+  ],
+  "conclusions": [
+    "Reports listing Boston Scientific accounted for 211 of the net 215-report increase.",
+    "229 May reports contained registry references and described year-only event dates.",
+    "Date substitution and inconsistencies between structured fields and narratives made exact reporting lags uncertain.",
+    "The evidence supports further review of reporting practices, not conclusions about changes in device safety."
+  ],
+  "ethical_considerations": [
+    "Unique report keys do not necessarily represent unique clinical incidents.",
+    "Possible-duplicate language does not establish actual duplication.",
+    "FDA reports alone cannot establish causality or device failure rates."
+  ]
+}

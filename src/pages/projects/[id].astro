@@ -9,7 +9,11 @@ const p=project.data;
 const sections=[['Outputs',p.output],['Findings',p.conclusions],['Further research',p.further_research],['Ethics & limitations',p.ethical_considerations]];
 ---
 <Layout title={`${p.title} | Yosephine Manihuruk`} description={p.abstract}>
-<article class="reading-page container"><a class="back-link" href="/#work">← Selected projects</a><header class="reading-header"><p class="eyebrow">Research & data visualization</p><h1 class="project-heading">{p.title}</h1><ul class="tags">{p.tags?.map(t=><li>{t}</li>)}</ul>{p.link && <a class="button project-cta" href={p.link} target="_blank" rel="noopener noreferrer">{project.id==='project-4'?'View presentation':'Explore interactive project'} ↗</a>}</header>
+<article class="reading-page container"><a class="back-link" href="/#work">← Selected projects</a><header class="reading-header"><p class="eyebrow">Research & data visualization</p><h1 class="project-heading">{p.title}</h1><ul class="tags">{p.tags?.map(t=><li>{t}</li>)}</ul>{p.link && <a class="button project-cta" href={p.link} target="_blank" rel="noopener noreferrer">{project.id === 'project-5'
+  ? 'View code & workbook'
+  : project.id === 'project-4'
+    ? 'View presentation'
+    : 'Explore interactive project'} ↗</a>}</header>
 {p.image && <Image class="case-image" src={p.image} alt={`${p.title} — project visualization`} widths={[600,1000,1600]} sizes="(max-width: 1100px) 100vw, 1100px" />}
 <div class="case-body"><section><h2>Overview</h2><p>{p.abstract}</p></section><section><h2>Context & question</h2><p>{p.introduction}</p></section>{sections.map(([label,items])=>Array.isArray(items)&&items.length>0&&<section><h2>{label}</h2><ul class="prose-list">{items.map(item=><li>{item}</li>)}</ul></section>)}<a class="back-link" href="/#work">← Explore more projects</a></div></article>
 </Layout>
